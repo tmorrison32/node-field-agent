@@ -1,0 +1,5 @@
+@url = http://localhost:8000/agent 
+GET {{url}} HTTP/1.1
+
+####
+GET {{url}}/1 HTTP/1.1
