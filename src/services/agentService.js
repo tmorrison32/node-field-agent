@@ -37,7 +37,7 @@ async function create(agent){
         insert into agent
         (first_name, middle_name, last_name, dob, height_in_inches)
         values
-        ("${agent.firstName}", "${agent.lastName}", "${agent.middleName}",
+        ("${agent.firstName}", "${agent.middleName}", "${agent.lastName}",
          "${agent.dob}", ${agent.heightInInches})
     `);
 
@@ -57,7 +57,7 @@ async function update(agentId, agent){
         middle_name="${agent.middleName}",
         last_name="${agent.lastName}",
         dob="${agent.dob}",
-        height_in_inches=${agent.heightInInches},
+        height_in_inches=${agent.heightInInches}
         where agent_id=${agentId}
     `);
 

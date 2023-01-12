@@ -15,3 +15,15 @@ Content-Type: application/json
     "dob" : "1991-05-26",
     "heightInInches": 67
 }
+
+####
+PUT {{url}}/9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName" : "Dillon",
+    "middleName" : "Robert",
+    "lastName" : "Tuck",
+    "dob" : "1991-05-26",
+    "heightInInches": 63
+}
