@@ -18,4 +18,8 @@ router.put("/:id", async(req, res, next) =>{
     res.json(await service.update(req.params.id, req.body));
 });
 
+router.delete("/:id", async (req, res, next) => {
+    res.json(await service.deleteOne(req.params.id))
+});
+
 module.exports = router;

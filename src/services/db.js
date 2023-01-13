@@ -8,6 +8,15 @@ async function query(sql, params){
     return results;
 }
 
+async function transactionalQuery(queryArray){
+    
+}
+
+function getConnection(){
+    return mysql.createPool(config.db).getConnection();
+}
+
 module.exports = {
-    query
+    query,
+    getConnection
 }

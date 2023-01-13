@@ -70,10 +70,31 @@ async function update(agentId, agent){
     return {message};
 }
 
+async function deleteOne(id){
+    const connection = await db.getConnection();
+    let message = "Failed to delete agent";
+ 
+    try {
+        await connection.query('START TRANSACTION');
+        await connection.query(`DELETE FROM agency_agent WHERE agent_id=${id}`);
+        await connection.query(`DELETE FROM agent WHERE agent_id=${id}`);
+        await connection.query(`COMMIT`);
+        await connection.release();
+        message = "Agent deleted"
+    }catch(e){
+        await connection.query('ROLLBACK');
+        await connection.release();
+    }
+ 
+    return {message}
+}
+
+
+
 module.exports = {
     getAll,
     getOne,
     create,
     update,
-    // deleteOne,
+    deleteOne
 }
